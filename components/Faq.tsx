@@ -1,4 +1,4 @@
-import { site } from "../lib/site";
+import { siteConfig } from "../lib/site";
 
 const faq = [
   { q: "استفاده از دانورا برای دانش‌آموز هزینه دارد؟",
@@ -22,7 +22,7 @@ export default function Faq() {
         <div className="text-center">
           <h2 className="section-title">سؤالات پرتکرار</h2>
           <p className="section-sub">
-            پاسخت را پیدا نکردی؟ به {site.phoneFa} پیام بده.
+            پاسخت را پیدا نکردی؟ به {siteConfig.phoneFa} پیام بده.
           </p>
         </div>
 

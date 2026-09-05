@@ -1,4 +1,4 @@
-import { site } from "../lib/site";
+import { siteConfig } from "../lib/site";
 
 export default function Cta() {
   return (
@@ -18,7 +18,7 @@ export default function Cta() {
 
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
               <a
-                href={site.bot}
+                href={siteConfig.bot}
                 target="_blank"
                 rel="noopener"
                 className="btn bg-white text-brand-700 hover:bg-brand-50"
@@ -26,7 +26,7 @@ export default function Cta() {
                 ورود به ربات تلگرام
               </a>
               <a
-                href={`tel:${site.phone}`}
+                href={`tel:${siteConfig.phone}`}
                 className="btn border border-white/25 text-white hover:bg-white/10"
               >
                 تماس با پشتیبانی

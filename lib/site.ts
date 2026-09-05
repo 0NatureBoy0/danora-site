@@ -1,7 +1,13 @@
 export const siteConfig = {
+  url: "https://danora.site",
   name: "دانورا",
   slogan: "پلتفرم رایگان اتصال معلم و دانش‌آموز",
   description: "پیدا کردن معلم خصوصی برای ریاضی، فیزیک، شیمی، زیست، انگلیسی و برنامه‌نویسی - کاملاً رایگان",
+  bot: "https://t.me/Teachconnect_ir_bot",
+  phone: "09981379074",
+  phoneFa: "۰۹۹۸۱۳۷۹۰۷۴",
+  tagline: "پلتفرم رایگان اتصال معلم و دانش‌آموز",
+
   telegramBot: "https://t.me/Teachconnect_ir_bot",
   supportPhone: "09981379074",
   supportEmail: "danora.support@danora.site",

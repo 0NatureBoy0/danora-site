@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import { siteConfig } from "@/lib/site";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import { siteConfig } from "../lib/site";
 
 export const metadata: Metadata = {
   title: `${siteConfig.name} | ${siteConfig.slogan}`,

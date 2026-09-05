@@ -1,5 +1,5 @@
 import Logo from "./Logo";
-import { site } from "../lib/site";
+import { siteConfig } from "../lib/site";
 
 const stats = [
   { v: "۶", l: "درس اصلی" },
@@ -20,7 +20,7 @@ export default function Hero() {
         <div className="animate-fade-up text-center lg:text-start">
           <span className="badge mb-5">
             <span className="h-2 w-2 rounded-full bg-brand-500" />
-            {site.tagline}
+            {siteConfig.tagline}
           </span>
 
           <h1 className="text-[2rem] font-black leading-[1.35] sm:text-5xl sm:leading-[1.3]">
@@ -37,7 +37,7 @@ export default function Hero() {
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center lg:justify-start">
-            <a href={site.bot} target="_blank" rel="noopener" className="btn-primary">
+            <a href={siteConfig.bot} target="_blank" rel="noopener" className="btn-primary">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M21.9 4.3 18.8 19c-.2 1-.9 1.3-1.7.8l-4.7-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.4-4.9 8.4-7.6c.4-.3-.1-.5-.6-.2L6.9 12.9l-4.5-1.4c-1-.3-1-1 .2-1.4l17.4-6.7c.8-.3 1.6.2 1.3 1Z" />
               </svg>
