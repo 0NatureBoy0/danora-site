@@ -1,60 +1,34 @@
-import Logo from "./Logo";
-import { site, subjects } from "../lib/site";
+import { siteConfig } from "@/lib/site";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-slate-100 bg-slate-50/70">
-      <div className="container-page py-14">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-          <div className="lg:col-span-2">
-            <div className="flex items-center gap-2.5">
-              <Logo size={38} />
-              <span className="text-lg font-black">{site.name}</span>
-            </div>
-            <p className="mt-4 max-w-sm text-sm leading-8 text-slate-500">
-              دانورا پلتفرم اتصال معلم و دانش‌آموز است. پیدا کردن معلم خصوصی، انتخاب زمان و
-              ارتباط مطمئن — همه در ربات تلگرام.
-            </p>
-            <a href={site.bot} target="_blank" rel="noopener" className="btn-primary mt-6">
-              ورود به ربات
-            </a>
-          </div>
-
-          <div>
-            <h3 className="text-sm font-black">دروس</h3>
-            <ul className="mt-4 space-y-2.5 text-sm text-slate-500">
-              {subjects.map((s) => <li key={s.name}>{s.name}</li>)}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-sm font-black">ارتباط با ما</h3>
-            <ul className="mt-4 space-y-2.5 text-sm text-slate-500">
-              <li>
-                <a href={`tel:${site.phone}`} className="hover:text-brand-700">
-                  پشتیبانی: {site.phoneFa}
-                </a>
-              </li>
-              <li>
-                <a href={`mailto:${site.email}`} className="hover:text-brand-700">
-                  {site.email}
-                </a>
-              </li>
-              <li>
-                <a href={site.bot} target="_blank" rel="noopener" className="hover:text-brand-700">
-                  ربات تلگرام دانورا
-                </a>
-              </li>
-              <li>{site.domain}</li>
-            </ul>
-          </div>
+    <footer id="support" className="bg-gray-900 text-gray-300 py-10 mt-16">
+      <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-8 text-sm">
+        <div>
+          <h3 className="text-white font-bold mb-3">{siteConfig.name}</h3>
+          <p>{siteConfig.description}</p>
         </div>
-
-        <div className="mt-12 flex flex-col items-center gap-3 border-t border-slate-200 pt-6 text-xs text-slate-400 sm:flex-row sm:justify-between">
-          <p>© {new Date().getFullYear()} دانورا — تمامی حقوق محفوظ است.</p>
-          <p>پرداخت‌ها از طریق درگاه معتبر زرین‌پال</p>
+        <div>
+          <h3 className="text-white font-bold mb-3">پشتیبانی</h3>
+          <p>تلفن: {siteConfig.supportPhone}</p>
+          <p>ایمیل: {siteConfig.supportEmail}</p>
+          <a
+            href={siteConfig.telegramBot}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-400 hover:underline"
+          >
+            ربات تلگرام دانورا
+          </a>
+        </div>
+        <div>
+          <h3 className="text-white font-bold mb-3">دروس</h3>
+          <p>{siteConfig.subjects.join("، ")}</p>
         </div>
       </div>
+      <p className="text-center text-xs text-gray-500 mt-8">
+        © {new Date().getFullYear()} {siteConfig.name} - تمامی خدمات کاملاً رایگان است
+      </p>
     </footer>
   );
 }
