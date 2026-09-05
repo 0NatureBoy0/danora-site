@@ -1,50 +1,63 @@
-import { site } from "../lib/site";
-
-const faq = [
-  { q: "استفاده از دانورا برای دانش‌آموز هزینه دارد؟",
-    d: "نه، دانورا کاملاً رایگان است. مشاهدهٔ پروفایل معلم‌ها، جستجو و ارتباط گرفتن، همه بدون هیچ هزینه‌ای انجام می‌شود." },
-  { q: "آگهی من چند روز فعال می‌ماند؟",
-    d: "آگهی‌های شما هیچ محدودیت زمانی ندارند و به‌صورت رایگان فعال باقی می‌مانند." },
-  { q: "شهریهٔ هر جلسه را چه کسی تعیین می‌کند؟",
-    d: "معلم شهریه را در آگهی پنل خود اعلام می‌کند و پیش از هر توافقی برای دانش‌آموز قابل مشاهده است." },
-  { q: "چطور مطمئن شوم معلم معتبر است؟",
-    d: "هر معلم موقع ثبت‌نام مدارک تحصیلی و سابقهٔ تدریس بارگذاری می‌کند و پروفایل پس از بررسی تأیید می‌شود." },
-  { q: "آی‌دی‌ها چه زمانی رد و بدل می‌شود؟",
-    d: "بعد از تأیید طرفین، آی‌دی معلم و دانش‌آموز به‌صورت رایگان و بدون هیچ پرداختی به یکدیگر نمایش داده می‌شود." },
-  { q: "آیا محدودیتی در تعداد آگهی‌ها وجود دارد؟",
-    d: "نه، می‌توانید به تعداد دلخواه آگهی ثبت کنید؛ همهٔ امکانات دانورا کاملاً رایگان است." },
-];
+import { siteConfig } from "../lib/site";
 
 export default function Faq() {
+  const faqs = [
+    {
+      q: "آیا واقعاً کاملاً رایگان است؟",
+      a: "بله! تمام سرویس‌های دانورا برای معلم‌ها و دانش‌آموزان کاملاً رایگان است."
+    },
+    {
+      q: "چگونه می‌توانم معلم خود را پیدا کنم؟",
+      a: "کافی است وارد ربات تلگرام دانورا شوید، درس مورد نظر را جستجو کنید و پروفایل معلم‌ها را مشاهده کنید."
+    },
+    {
+      q: "آیا معلم‌ها تأیید شده‌اند؟",
+      a: "بله! تمام معلم‌ها باید مدارک تحصیلی و سابقهٔ تدریس خود را بارگذاری و تأیید کنند."
+    },
+    {
+      q: "چه زمانی می‌توانم شروع کنم؟",
+      a: "همین الآن! کافی است به ربات تلگرام وارد شوید و ثبت‌نام کنید."
+    },
+    {
+      q: "آیا نیاز به نصب اپلیکیشن است؟",
+      a: "خیر! همه‌چیز از طریق وب‌سایت و تلگرام انجام می‌شود."
+    },
+    {
+      q: "چگونه می‌توانم کمک بگیرم؟",
+      a: "می‌توانید از طریق تلگرام، تلفن یا ایمیل با ما تماس بگیرید."
+    }
+  ];
+
   return (
-    <section id="faq" className="section">
-      <div className="container-page max-w-3xl">
-        <div className="text-center">
-          <h2 className="section-title">سؤالات پرتکرار</h2>
-          <p className="section-sub">
-            پاسخت را پیدا نکردی؟ به {site.phoneFa} پیام بده.
+    <section className="section-padding bg-gray-50">
+      <div className="container-max">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-black mb-4 gradient-text">
+            سوالات متداول
+          </h2>
+          <p className="text-xl text-gray-600">
+            پاسخ‌های شما را اینجا پیدا کنید
           </p>
         </div>
 
-        <div className="mt-10 space-y-3">
-          {faq.map((f) => (
-            <details
-              key={f.q}
-              className="group rounded-2xl border border-slate-100 bg-white p-5 shadow-card open:border-brand-200"
-            >
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-bold">
-                {f.q}
-                <svg
-                  className="shrink-0 text-brand-600 transition group-open:rotate-45"
-                  width="18" height="18" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"
-                >
-                  <path d="M12 5v14M5 12h14" />
-                </svg>
+        <div className="max-w-3xl mx-auto space-y-4">
+          {faqs.map((faq, i) => (
+            <details key={i} className="card p-6 cursor-pointer group">
+              <summary className="flex items-center justify-between font-bold text-lg text-gray-900 hover:text-cyan-600 transition">
+                {faq.q}
+                <span className="text-2xl group-open:rotate-180 transition">▼</span>
               </summary>
-              <p className="mt-3 text-sm leading-8 text-slate-500">{f.d}</p>
+              <p className="text-gray-600 mt-4 leading-relaxed">
+                {faq.a}
+              </p>
             </details>
           ))}
+        </div>
+
+        <div className="text-center mt-12">
+          <p className="text-gray-600 mb-4">
+            پاسخت را پیدا نکردی؟ با ما تماس بگیر.
+          </p>
         </div>
       </div>
     </section>
