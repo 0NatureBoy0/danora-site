@@ -1,5 +1,5 @@
 import Logo from "./Logo";
-import { site, subjects } from "@/lib/site";
+import { site, subjects } from "../lib/site";
 
 export default function Footer() {
   return (

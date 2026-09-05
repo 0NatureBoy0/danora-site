@@ -1,6 +1,7 @@
+import EnamadBadge from "./EnamadBadge";
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import { site } from "@/lib/site";
+import { site } from "../lib/site";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -31,7 +32,8 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fa" dir="rtl">
-      <body className="font-sans">{children}</body>
+      <body className="font-sans">{children}        <EnamadBadge />
+      </body>
     </html>
   );
 }

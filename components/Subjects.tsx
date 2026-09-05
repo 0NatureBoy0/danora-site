@@ -1,4 +1,4 @@
-import { subjects } from "@/lib/site";
+import { subjects } from "../lib/site";
 
 export default function Subjects() {
   return (

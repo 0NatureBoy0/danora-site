@@ -2,3 +2,5 @@ node_modules/
 .next/
 .env
 .env.local
+_backup_before_free/
+*.log

@@ -2,13 +2,12 @@
 
 import { useEffect, useState } from "react";
 import Logo from "./Logo";
-import { site } from "@/lib/site";
+import { site } from "../lib/site";
 
 const nav = [
   { href: "#subjects", label: "دروس" },
   { href: "#how",      label: "چطور کار می‌کند" },
   { href: "#features", label: "امکانات" },
-  { href: "#plans",    label: "پلن‌ها" },
   { href: "#faq",      label: "سؤالات" },
 ];
 

@@ -1,9 +1,9 @@
 import Logo from "./Logo";
-import { site } from "@/lib/site";
+import { site } from "../lib/site";
 
 const stats = [
   { v: "۶", l: "درس اصلی" },
-  { v: "۲", l: "آگهی رایگان" },
+  { v: "۱۰۰٪", l: "رایگان" },
   { v: "۲۴/۷", l: "پشتیبانی" },
 ];
 
@@ -26,13 +26,13 @@ export default function Hero() {
           <h1 className="text-[2rem] font-black leading-[1.35] sm:text-5xl sm:leading-[1.3]">
             معلم خصوصی مناسبت را
             <span className="mt-2 block bg-gradient-to-l from-brand-700 to-brand-400 bg-clip-text text-transparent">
-              با دانورا پیدا کن
+              کاملاً رایگان با دانورا پیدا کن
             </span>
           </h1>
 
           <p className="mx-auto mt-5 max-w-xl text-base leading-8 text-slate-600 lg:mx-0">
             ریاضی، فیزیک، شیمی، زیست، انگلیسی و برنامه‌نویسی. پروفایل معلم‌ها را ببین،
-            زمان دلخواهت را انتخاب کن و بعد از تأیید و پرداخت کارمزد، ارتباط مستقیم بگیر —
+            زمان دلخواهت را انتخاب کن و بعد از تأیید طرفین، کاملاً رایگان ارتباط مستقیم بگیر —
             همه در ربات تلگرام.
           </p>
 
@@ -41,9 +41,9 @@ export default function Hero() {
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M21.9 4.3 18.8 19c-.2 1-.9 1.3-1.7.8l-4.7-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.4-4.9 8.4-7.6c.4-.3-.1-.5-.6-.2L6.9 12.9l-4.5-1.4c-1-.3-1-1 .2-1.4l17.4-6.7c.8-.3 1.6.2 1.3 1Z" />
               </svg>
-              شروع در ربات تلگرام
+              شروع رایگان در ربات تلگرام
             </a>
-            <a href="#plans" className="btn-ghost">مشاهدهٔ پلن‌ها</a>
+            <a href="#features" className="btn-ghost">مشاهدهٔ امکانات</a>
           </div>
 
           <dl className="mt-10 flex justify-center gap-8 lg:justify-start">
@@ -79,7 +79,7 @@ export default function Hero() {
             </div>
 
             <div className="mt-5 grid grid-cols-3 gap-2">
-              {["پروفایل", "زمان‌ها", "پرداخت"].map((t) => (
+              {["پروفایل", "زمان‌ها", "رایگان"].map((t) => (
                 <span key={t} className="rounded-xl bg-brand-50 py-2 text-center text-xs font-bold text-brand-700">
                   {t}
                 </span>
