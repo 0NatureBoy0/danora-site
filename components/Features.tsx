@@ -1,34 +1,46 @@
-const items = [
-  { t: "پروفایل تأییدشده", d: "مدارک تحصیلی و سابقهٔ تدریس هر معلم بررسی و تأیید می‌شود." },
-  { t: "شهریهٔ شفاف", d: "قیمت هر جلسه پیش از هر توافقی در آگهی مشخص است." },
-  { t: "انتخاب زمان", d: "دانش‌آموز از میان زمان‌های اعلامی معلم انتخاب می‌کند." },
-  { t: "کاملاً رایگان", d: "ثبت آگهی، جستجو و ارتباط در دانورا بدون هیچ هزینه‌ای است." },
-  { t: "بدون نصب اپ", d: "همه چیز در تلگرام — روی موبایل و دسکتاپ." },
-  { t: "پشتیبانی واقعی", d: "تیم پشتیبانی پاسخگوی معلم و دانش‌آموز است." },
-];
+"use client";
+import { motion } from "framer-motion";
+import { ShieldCheck, Gift, Clock, Smartphone, Headphones, Sparkles } from "lucide-react";
+import { siteConfig } from "../lib/site";
+
+const iconMap: Record<string, any> = {
+  "پروفایل تأیید‌شده": ShieldCheck,
+  "کاملاً رایگان": Gift,
+  "انتخاب زمان دلخواه": Clock,
+  "بدون نیاز به نصب اپلیکیشن": Smartphone,
+  "پشتیبانی واقعی": Headphones,
+};
 
 export default function Features() {
   return (
-    <section id="features" className="section">
-      <div className="container-page">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="section-title">چرا دانورا؟</h2>
-          <p className="section-sub">ساده، شفاف، رایگان و مطمئن — برای هر دو طرف.</p>
-        </div>
-
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {items.map((f) => (
-            <article key={f.t} className="card">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-600/10">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4338CA" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="m5 13 4 4L19 7" />
-                </svg>
+    <section id="features" className="py-16">
+      <h2 className="text-3xl font-bold text-center mb-10 gradient-text">
+        امکانات دانورا
+      </h2>
+      <div className="grid md:grid-cols-3 gap-6">
+        {siteConfig.features.map((f, i) => {
+          const Icon = iconMap[f.title] || Sparkles;
+          return (
+            <motion.div
+              key={f.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              whileHover={{ y: -8 }}
+              className="relative bg-white rounded-2xl p-6 shadow-md hover:shadow-2xl transition group overflow-hidden"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-green-50 opacity-0 group-hover:opacity-100 transition" />
+              <div className="relative z-10">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600 to-green-500 flex items-center justify-center mb-4 animate-float">
+                  <Icon className="text-white w-6 h-6" />
+                </div>
+                <h3 className="font-bold text-lg mb-2 text-gray-900">{f.title}</h3>
+                <p className="text-gray-600">{f.desc}</p>
               </div>
-              <h3 className="mt-4 font-black">{f.t}</h3>
-              <p className="mt-2 text-sm leading-7 text-slate-500">{f.d}</p>
-            </article>
-          ))}
-        </div>
+            </motion.div>
+          );
+        })}
       </div>
     </section>
   );

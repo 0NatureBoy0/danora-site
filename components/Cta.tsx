@@ -1,32 +1,43 @@
+"use client";
+import { motion } from "framer-motion";
 import { siteConfig } from "../lib/site";
 
-export default function Cta() {
+export default function CTA() {
   return (
-    <section className="section-padding bg-gradient-to-r from-cyan-500 to-green-500">
-      <div className="container-max text-center">
-        <h2 className="text-4xl md:text-5xl font-black mb-6 text-white">
+    <section className="relative text-center py-20 overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-green-500 opacity-95 rounded-3xl mx-4" />
+      <div className="relative z-10 px-4">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-3xl font-bold mb-4 text-white"
+        >
           همین حالا شروع کنید
-        </h2>
-        <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.1 }}
+          className="text-white/90 mb-8"
+        >
           هیچ هزینه‌ای برای استفاده از دانورا پرداخت نمی‌کنید
-        </p>
-        
-        <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <a 
-            href={siteConfig.bot}
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="btn bg-white text-cyan-600 hover:bg-gray-100 text-lg font-bold"
-          >
-            ورود به ربات تلگرام 🚀
-          </a>
-          <a 
-            href={`tel:${siteConfig.phone}`}
-            className="btn bg-white/20 text-white border-2 border-white hover:bg-white/30 text-lg font-bold"
-          >
-            تماس با پشتیبانی ☎️
-          </a>
-        </div>
+        </motion.p>
+        <motion.a
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          href={siteConfig.telegramBot}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block bg-white text-blue-600 px-8 py-4 rounded-2xl text-lg font-bold shadow-xl hover:shadow-2xl transition"
+        >
+          ورود به ربات تلگرام
+        </motion.a>
       </div>
     </section>
   );

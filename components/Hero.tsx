@@ -1,64 +1,54 @@
+"use client";
+import { motion } from "framer-motion";
 import { siteConfig } from "../lib/site";
 
 export default function Hero() {
   return (
-    <section className="section-padding bg-gradient-to-b from-cyan-50 via-white to-green-50">
-      <div className="container-max">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Text */}
-          <div className="animate-fade-in-up">
-            <h1 className="text-5xl md:text-6xl font-black mb-6 leading-tight">
-              <span className="gradient-text">پلتفرم رایگان</span>
-              <br />
-              اتصال معلم و دانش‌آموز
-            </h1>
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-              {siteConfig.description}
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a 
-                href={siteConfig.bot}
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="btn btn-primary text-lg"
-              >
-                شروع کاملاً رایگان 🚀
-              </a>
-              <a 
-                href="#how-it-works"
-                className="btn btn-secondary text-lg"
-              >
-                بیشتر بدانید
-              </a>
-            </div>
-          </div>
+    <section className="relative text-center py-24 overflow-hidden">
+      <div className="absolute top-0 -left-4 w-72 h-72 bg-blue-400/30 rounded-full blur-3xl animate-blob" />
+      <div className="absolute top-0 right-0 w-72 h-72 bg-green-400/30 rounded-full blur-3xl animate-blob animation-delay-2000" />
+      <div className="absolute bottom-0 left-1/2 w-72 h-72 bg-cyan-300/20 rounded-full blur-3xl animate-blob animation-delay-4000" />
 
-          {/* Illustration */}
-          <div className="hidden md:flex justify-center animate-slide-in-right">
-            <div className="relative w-80 h-80">
-              <div className="absolute inset-0 gradient-primary rounded-3xl opacity-20 blur-3xl"></div>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-8xl">👨‍🎓</div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div className="relative z-10">
+        <motion.span
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="inline-block bg-green-50 text-green-700 px-4 py-1.5 rounded-full text-sm font-medium mb-6 border border-green-200"
+        >
+          ✅ ۱۰۰٪ رایگان برای همیشه
+        </motion.span>
 
-        {/* Stats */}
-        <div className="grid grid-cols-3 gap-4 mt-16 pt-16 border-t border-gray-200">
-          <div className="text-center">
-            <div className="text-3xl font-bold gradient-text">۱۰۰%</div>
-            <p className="text-gray-600">رایگان</p>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold gradient-text">۶ درس</div>
-            <p className="text-gray-600">تحت پوشش</p>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold gradient-text">۲۴/۷</div>
-            <p className="text-gray-600">پشتیبانی</p>
-          </div>
-        </div>
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1 }}
+          className="text-4xl md:text-6xl font-extrabold text-gray-900 mb-4 leading-tight"
+        >
+          <span className="gradient-text">{siteConfig.slogan}</span>
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="text-gray-600 text-lg mb-10 max-w-2xl mx-auto"
+        >
+          {siteConfig.description}
+        </motion.p>
+
+        <motion.a
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          href={siteConfig.telegramBot}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block bg-gradient-to-r from-blue-600 to-green-500 text-white px-8 py-4 rounded-2xl text-lg font-bold shadow-xl hover:shadow-2xl transition"
+        >
+          شروع کاملاً رایگان 🚀
+        </motion.a>
       </div>
     </section>
   );
